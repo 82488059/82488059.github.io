@@ -1,8 +1,8 @@
-FIRE
+FLAME
 =====
 
-- Blog of fire.
-- Welcome to lost in [fire](https://82488059.github.io).
+- Blog of FLAME.
+- Welcome to lost in [FLAME](https://82488059.github.io).
 
                                    _________________
                               ____/:::::::::::::::::\_____
