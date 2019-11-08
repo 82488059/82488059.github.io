@@ -1,8 +1,8 @@
-西夏
+FIRE
 =====
 
-- Blog of Xixia.
-- Welcome to lost in [Xixia](http://xixia.info/).
+- Blog of fire.
+- Welcome to lost in [fire](https://82488059.github.io).
 
                                    _________________
                               ____/:::::::::::::::::\_____
