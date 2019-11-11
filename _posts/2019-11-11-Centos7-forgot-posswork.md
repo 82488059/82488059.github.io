@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "centOS7.3忘记密码CentOS7.3重置修改root密码centos7破解密码"
+title:  "Centos Reset root password"
 categories: tool
 tags: linux 
 author: other
-description: centOS7.3忘记密码CentOS7.3重置修改root密码centos7破解密码
+description: Centos Reset root password 
 ---
 
 1、机进入启动界面，开机进入启动界面后，要按照屏幕的下方的操作提示迅速按下e键，进入编辑页面。动作要快点,否则5秒就会开始自动进入启动页面了。
