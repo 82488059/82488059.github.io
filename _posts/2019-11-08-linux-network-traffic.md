@@ -380,16 +380,17 @@ recv  send|     time
 ## 18. collectl
 collectl以一种类似dstat的格式报告系统的统计信息；与dstat一样，它也收集关于系统不同资源（如处理器、内存和网络等）的统计信息。这里给出的一个简单例子显示了如何使用collectl来报告网络使用/带宽。
 ```
-$ collectl -sn -oT -i0.5 
-waiting for 0.5 second sample... 
-#         <----------Network----------> 
-#Time       KBIn  PktIn  KBOut  PktOut 
-10:32:01      40     58     43      66 
-10:32:01      27     58      3      32 
-10:32:02       3     28      9      44 
-10:32:02       5     42     96      96 
-10:32:03       5     48      3      28 
+    $ collectl -sn -oT -i0.5 
+    waiting for 0.5 second sample... 
+    #         <----------Network----------> 
+    #Time       KBIn  PktIn  KBOut  PktOut 
+    10:32:01      40     58     43      66 
+    10:32:01      27     58      3      32 
+    10:32:02       3     28      9      44 
+    10:32:02       5     42     96      96 
+    10:32:03       5     48      3      28 
 ```
+
 安装collectl
 ```
 # Ubuntu/Debian用户 
