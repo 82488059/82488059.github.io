@@ -51,7 +51,3 @@ int CXXXView::AddString(const CString & string)
 [Microsoft CEditView类说明文档](https://docs.microsoft.com/zh-cn/cpp/mfc/reference/ceditview-class?view=vs-2019)
 
 [Microsoft CEdit类说明文档](https://docs.microsoft.com/zh-cn/cpp/mfc/reference/cedit-class?view=vs-2019)
-
-
-
-
