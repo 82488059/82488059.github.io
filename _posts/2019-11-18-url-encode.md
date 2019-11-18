@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "服务端文件路径拼接url地址时一定要注意encode"
+title:  "url一定要encode"
 categories: programming
 tags: 吐槽 
 author: flame
