@@ -43,15 +43,17 @@ if __name__ == "__main__":
     try:
         opts, args = getopt.getopt(sys.argv[1:],"hi:p:t:v", ["help", "ip=", "port=", "version"])
     except getopt.GetoptError:
+        # 解析出错的时候走这里
         print('test.py -h to help')
         exit(1)
 
-    print(opts)
     # print(args)
     if not opts:
+        # 没有解析到参数时走这里
         print('test.py -h to help')
         exit(1)
-
+    # 打印解析到的内容
+    print(opts)
     ip = None
     port = None
     types = None
