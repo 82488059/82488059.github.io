@@ -2,7 +2,7 @@
 layout: post
 title:  "python中使用getopt分析命令行参数"
 categories: shell
-tags: getopt python
+tags: python
 author: flame
 description: python中使用getopt分析命令行参数的用法
 ---
@@ -95,4 +95,4 @@ master ip 111, port a, type None.
 ```
 
 参考：  
-https://docs.python.org/3/library/getopt.html
+[https://docs.python.org/3/library/getopt.html](https://docs.python.org/3/library/getopt.html)
