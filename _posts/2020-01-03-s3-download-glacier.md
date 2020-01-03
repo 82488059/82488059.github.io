@@ -332,3 +332,7 @@ if __name__ == '__main__':
     # test_mkdir()
     test_download_objects()
 ```
+
+
+参考：
+[https://docs.aws.amazon.com/code-samples/latest/catalog/python-s3-s3-python-example-download-file.py.html](https://docs.aws.amazon.com/code-samples/latest/catalog/python-s3-s3-python-example-download-file.py.html)
