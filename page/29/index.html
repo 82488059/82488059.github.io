@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>火苗的博客 - 火苗999℃的博客</title><meta name="author" content="火苗"><meta name="copyright" content="火苗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="多情自古空余恨，好梦由来最易醒"><script type="application/ld+json"></script><link rel="shortcut icon" href="/picture/favicon.png"><link rel="canonical" href="http://www.xssl.online/page/29/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.4.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '火苗的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">火苗的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">火苗的博客</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/20180804/other/4v%E6%8E%A5%E5%8F%A3/" title="通信协议"><img class="post-bg" src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="通信协议"></a></div><div class="recent-post-info"><a class="article-title" href="/20180804/other/4v%E6%8E%A5%E5%8F%A3/" title="通信协议">通信协议</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-08-04T08:26:55.000Z" title="发表于 2018-08-04 16:26:55">2018-08-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82/">杂</a></span></div><div class="content">4V通信协议1. 通信方式使用HTTPS的POST方式通信 2.1 POST请求基本格式123456789&#123;    &quot;token&quot;: &quot;token str&quot;,				//身份令牌    &quot;request&quot;: &quot;json string&quot;,			//字符串化的JSON请求消息体    &quot;nonce&quot;: 12345,					    //随机数    &quot;timestamp&quot;: 65543216421, 		    //请求的时间戳    &quot;signature&quot;: &quot;signature string&quot;,	//请求的校验码    &quot;encrypt&quot;:1,						//request是否为加密串    &quot;echostr&quot;: &quot;echo string&quot;			//随机字符串&#125; 2.2 请求结果的返回格式12345678&#123;    &quot;resp...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20180427/deploy/2018-04-27-TTS%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3/" title="TTS 文本转语音"><img class="post-bg" src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="TTS 文本转语音"></a></div><div class="recent-post-info"><a class="article-title" href="/20180427/deploy/2018-04-27-TTS%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3/" title="TTS 文本转语音">TTS 文本转语音</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-04-27T05:34:01.000Z" title="发表于 2018-04-27 13:34:01">2018-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/">c++</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3/">文本转语音</a></span></div><div class="content">文本转语音TTS 文本转语音包SpeechSDK51 SpeechSDK51LangPack 地址https://www.microsoft.com/en-us/download/details.aspx?id=10121# tts.cpp 代码块12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576// SDK下载地址 https://www.microsoft.com/en-us/download/details.aspx?id=10121// TTS.cpp : 定义控制台应用程序的入口点。//#include &quot;stdafx.h&quot;#include &quot;TTS.h&quot;#include &lt;sapi.h&gt;#pragma comment(lib, &quot;ole32.lib&quot;) //CoIn...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20180129/deploy/2018-01-29-Add-Two-Numbers/" title="Add Two Numbers"><img class="post-bg" src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="Add Two Numbers"></a></div><div class="recent-post-info"><a class="article-title" href="/20180129/deploy/2018-01-29-Add-Two-Numbers/" title="Add Two Numbers">Add Two Numbers</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-29T09:34:50.000Z" title="发表于 2018-01-29 17:34:50">2018-01-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/algorithm/">algorithm</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/">c++</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/algorithm/">algorithm</a></span></div><div class="content">https://leetcode.com/problems/add-two-numbers/description/ You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.给定两个非空链表，表示两个非负整数。这些数字以相反的顺序存储，每个节点都包含一个数字。添加两个数字并将其作为一个链表返回。 You may assume the two numbers do not contain any leading zero, except the number 0 itself.你可以假设这两个数字不包含任何前导零，除了数字0本身。 12345678910111213141516171819202122232...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20180112/deploy/2018-01-12-qt%E4%B8%8B%E8%BD%BD/" title="各版本qt与qtcreator下载地址"><img class="post-bg" src="/picture/flame.gif" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="各版本qt与qtcreator下载地址"></a></div><div class="recent-post-info"><a class="article-title" href="/20180112/deploy/2018-01-12-qt%E4%B8%8B%E8%BD%BD/" title="各版本qt与qtcreator下载地址">各版本qt与qtcreator下载地址</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-12T02:46:42.000Z" title="发表于 2018-01-12 10:46:42">2018-01-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/qt/">qt</a></span></div><div class="content">各版本qt与qtcreator下载地址http://download.qt.io/archive/</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20171118/deploy/2019-11-18-url-encode/" title="url一定要encode"><img class="post-bg" src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="url一定要encode"></a></div><div class="recent-post-info"><a class="article-title" href="/20171118/deploy/2019-11-18-url-encode/" title="url一定要encode">url一定要encode</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-11-18T07:02:14.000Z" title="发表于 2017-11-18 15:02:14">2017-11-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82/">杂</a></span></div><div class="content">搭建的http文件服务器。http地址由服务端拼接，然而web开发竟然忘记了encode，导致上线后某些文件不能预览（手动滑稽）。 </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20170722/deploy/2017-07-22-boost-string-wstring%E8%BD%AC%E6%8D%A2/" title="c++ string wstring 转换"><img class="post-bg" src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="c++ string wstring 转换"></a></div><div class="recent-post-info"><a class="article-title" href="/20170722/deploy/2017-07-22-boost-string-wstring%E8%BD%AC%E6%8D%A2/" title="c++ string wstring 转换">c++ string wstring 转换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-07-22T10:21:32.000Z" title="发表于 2017-07-22 18:21:32">2017-07-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/">c++</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/boost/">boost</a></span></div><div class="content">string &lt;-&gt; wstring123456789101112#include &lt;boost/locale.hpp&gt;int TestChangeWS()&#123;    // string -&gt; wstring     std::wstring wname = boost::locale::conv::to_utf&lt;wchar_t&gt;(name, &quot;GBK&quot;);    std::wcout &lt;&lt; TEXT(&quot;wname:\t&quot;) &lt;&lt; wname &lt;&lt; TEXT(&quot;\n&quot;);    // wstring -&gt; string     std::string sname = boost::locale::conv::from_utf(wname, &quot;GBK&quot;);    std::cout &lt;&lt; &quot;sname:\t&quot; &lt;&lt; sname &lt;&lt; &quot;\n&quo...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20170722/deploy/2017-07-22-boost%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2/" title="UTF8-GBK转换"><img class="post-bg" src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="UTF8-GBK转换"></a></div><div class="recent-post-info"><a class="article-title" href="/20170722/deploy/2017-07-22-boost%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2/" title="UTF8-GBK转换">UTF8-GBK转换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-07-22T10:21:32.000Z" title="发表于 2017-07-22 18:21:32">2017-07-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/">c++</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/boost/">boost</a></span></div><div class="content">函数文档 123456std::string boost::locale::conv::between	(	char const * 	begin,char const * 	end,std::string const &amp; 	to_encoding,std::string const &amp; 	from_encoding,method_type 	how = default_method )	 Convert a text in range [begin,end) to to_encoding from from_encoding 将范围[begin,end)中的文本从from_encoding转为to_encoding   12345std::string boost::locale::conv::between	(	char const * 	text,std::string const &amp; 	to_encoding,std::string const &amp; 	from_encoding,method_type 	how = default_meth...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20160615/deploy/2016-06-15-VS%E9%80%9A%E8%BF%87MAP%E8%BF%BD%E8%B8%AA%E5%BC%82%E5%B8%B8%E4%BB%A3%E7%A0%81%E7%9A%84%E4%BD%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" title="VS通过.map文件查找异常代码的位置"><img class="post-bg" src="/picture/flame.gif" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="VS通过.map文件查找异常代码的位置"></a></div><div class="recent-post-info"><a class="article-title" href="/20160615/deploy/2016-06-15-VS%E9%80%9A%E8%BF%87MAP%E8%BF%BD%E8%B8%AA%E5%BC%82%E5%B8%B8%E4%BB%A3%E7%A0%81%E7%9A%84%E4%BD%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" title="VS通过.map文件查找异常代码的位置">VS通过.map文件查找异常代码的位置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-06-15T09:05:25.000Z" title="发表于 2016-06-15 17:05:25">2016-06-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/">c++</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/dbg/">dbg</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/dbg/">dbg</a></span></div><div class="content">VS通过.map文件查找异常代码的位置一、配置VS 1.配置禁用优化  2.配置生成汇编代码   3.配置生成MAP文件  二、查找崩溃代码位置 1.查看崩溃异常偏移  此处异常偏移为000019c3 2.查看程序加载地址  3.对照.MAP文件，查找第一处大于程序加载地址（00400000）+异常偏移（000019c3）的位置  004019e0是第一处大于004019c3的位置，那么崩溃就位于CTestHtmlDlg类OnButtonOk函数中， 4.查看TestHtml.cod  崩溃代码位于OnButtonOK函数 00000+(004019c3-004019b0)=00013的位置注意部分函数起始地址不是00000； 可以看出*p=0为崩溃代码。 </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20151030/deploy/2015-10-30-%E5%BE%AE%E4%BF%A1URL%E6%9C%89%E6%95%88%E6%80%A7%E9%AA%8C%E8%AF%81/" title="微信URL有效性验证"><img class="post-bg" src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="微信URL有效性验证"></a></div><div class="recent-post-info"><a class="article-title" href="/20151030/deploy/2015-10-30-%E5%BE%AE%E4%BF%A1URL%E6%9C%89%E6%95%88%E6%80%A7%E9%AA%8C%E8%AF%81/" title="微信URL有效性验证">微信URL有效性验证</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-10-30T08:14:21.000Z" title="发表于 2015-10-30 16:14:21">2015-10-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/php/">php</a></span></div><div class="content">新浪sae服务器php搭建微信echostr问题搭建SAE PHP服务器时其它配置完全正确，但是微信验证服务器有效性时总是出现配置失败的问题。 在echo echostr之前需要清除文本格式代码如下: 12345if ($tmpStr == $signature) &#123;        if( !headers_sent() )                header(&#x27;Content-Type: text/plain&#x27;);		echo $_GET [&quot;echostr&quot;];	&#125; </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20151013/deploy/2015-10-13-%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97pygame/" title="简单的俄罗斯方块"><img class="post-bg" src="/picture/src/old/diamond.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="简单的俄罗斯方块"></a></div><div class="recent-post-info"><a class="article-title" href="/20151013/deploy/2015-10-13-%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97pygame/" title="简单的俄罗斯方块">简单的俄罗斯方块</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-10-13T02:36:39.000Z" title="发表于 2015-10-13 10:36:39">2015-10-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/pygame/">pygame</a></span></div><div class="content">简单的俄罗斯方块123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/28/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/#content-inner">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/#content-inner">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/#content-inner">37</a><a class="extend next" rel="next" href="/page/30/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">火苗</div><div class="author-info-description">多情自古空余恨，好梦由来最易醒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" href="http://www.xssl.online/"><i class="/assets/images/favicon.png"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">每天都有一个好心情</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent"><img src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译libtorrent"/></a><div class="content"><a class="title" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent">windows编译libtorrent</a><time datetime="2024-05-23T13:44:32.000Z" title="发表于 2024-05-23 21:44:32">2024-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost"><img src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译boost"/></a><div class="content"><a class="title" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost">windows编译boost</a><time datetime="2024-05-08T13:44:32.000Z" title="发表于 2024-05-08 21:44:32">2024-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux"><img src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="vscode远程调试linux"/></a><div class="content"><a class="title" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux">vscode远程调试linux</a><time datetime="2023-12-21T12:05:00.000Z" title="发表于 2023-12-21 20:05:00">2023-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程"><img src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="linux服务检查进程"/></a><div class="content"><a class="title" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程">linux服务检查进程</a><time datetime="2023-12-01T12:05:00.000Z" title="发表于 2023-12-01 20:05:00">2023-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务"><img src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="ubuntu配置vnc服务"/></a><div class="content"><a class="title" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务">ubuntu配置vnc服务</a><time datetime="2023-11-03T12:05:00.000Z" title="发表于 2023-11-03 20:05:00">2023-11-03</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">81</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/maze/"><span class="card-category-list-name">maze</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/search/"><span class="card-category-list-name">search</span><span class="card-category-list-count">34</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/sort/"><span class="card-category-list-name">sort</span><span class="card-category-list-count">33</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/aws/"><span class="card-category-list-name">aws</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/boost/"><span class="card-category-list-name">boost</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/build/"><span class="card-category-list-name">build</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/c/"><span class="card-category-list-name">c++</span><span class="card-category-list-count">110</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/aws/" style="font-size: 1.28em; color: #99a0aa">aws</a> <a href="/tags/maze/" style="font-size: 1.39em; color: #99a5b5">maze</a> <a href="/tags/proxy/" style="font-size: 1.17em; color: #999ca0">proxy</a> <a href="/tags/shell/" style="font-size: 1.32em; color: #99a2ae">shell</a> <a href="/tags/boost/" style="font-size: 1.43em; color: #99a6b8">boost</a> <a href="/tags/video/" style="font-size: 1.1em; color: #999">video</a> <a href="/tags/pygame/" style="font-size: 1.35em; color: #99a3b1">pygame</a> <a href="/tags/lua/" style="font-size: 1.17em; color: #999ca0">lua</a> <a href="/tags/tools/" style="font-size: 1.14em; color: #999a9c">tools</a> <a href="/tags/opengl/" style="font-size: 1.17em; color: #999ca0">opengl</a> <a href="/tags/redis/" style="font-size: 1.17em; color: #999ca0">redis</a> <a href="/tags/network/" style="font-size: 1.1em; color: #999">network</a> <a href="/tags/s3-sync/" style="font-size: 1.1em; color: #999">s3 sync</a> <a href="/tags/ustar/" style="font-size: 1.1em; color: #999">ustar</a> <a href="/tags/centos/" style="font-size: 1.1em; color: #999">centos</a> <a href="/tags/git/" style="font-size: 1.17em; color: #999ca0">git</a> <a href="/tags/ffmpeg/" style="font-size: 1.21em; color: #999da3">ffmpeg</a> <a href="/tags/cp/" style="font-size: 1.1em; color: #999">cp</a> <a href="/tags/windows/" style="font-size: 1.39em; color: #99a5b5">windows</a> <a href="/tags/minizip/" style="font-size: 1.1em; color: #999">minizip</a> <a href="/tags/base64/" style="font-size: 1.1em; color: #999">base64</a> <a href="/tags/py/" style="font-size: 1.1em; color: #999">py</a> <a href="/tags/vs/" style="font-size: 1.28em; color: #99a0aa">vs</a> <a href="/tags/icon/" style="font-size: 1.1em; color: #999">icon</a> <a href="/tags/TortriseGit/" style="font-size: 1.14em; color: #999a9c">TortriseGit</a> <a href="/tags/mov/" style="font-size: 1.1em; color: #999">mov</a> <a href="/tags/unicode/" style="font-size: 1.1em; color: #999">unicode</a> <a href="/tags/cocos/" style="font-size: 1.21em; color: #999da3">cocos</a> <a href="/tags/libzip/" style="font-size: 1.1em; color: #999">libzip</a> <a href="/tags/service/" style="font-size: 1.1em; color: #999">service</a> <a href="/tags/hex/" style="font-size: 1.1em; color: #999">hex</a> <a href="/tags/samb/" style="font-size: 1.1em; color: #999">samb</a> <a href="/tags/svn/" style="font-size: 1.1em; color: #999">svn</a> <a href="/tags/transcoding/" style="font-size: 1.17em; color: #999ca0">transcoding</a> <a href="/tags/go/" style="font-size: 1.17em; color: #999ca0">go</a> <a href="/tags/sql/" style="font-size: 1.25em; color: #999fa7">sql</a> <a href="/tags/sort/" style="font-size: 1.46em; color: #99a8bc">sort</a> <a href="/tags/udp/" style="font-size: 1.17em; color: #999ca0">udp</a> <a href="/tags/python/" style="font-size: 1.5em; color: #99a9bf">python</a> <a href="/tags/database/" style="font-size: 1.1em; color: #999">database</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/05/">
+            <span class="card-archive-list-date">
+              五月 2024
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/12/">
+            <span class="card-archive-list-date">
+              十二月 2023
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/11/">
+            <span class="card-archive-list-date">
+              十一月 2023
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/09/">
+            <span class="card-archive-list-date">
+              九月 2023
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/08/">
+            <span class="card-archive-list-date">
+              八月 2023
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/07/">
+            <span class="card-archive-list-date">
+              七月 2023
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/06/">
+            <span class="card-archive-list-date">
+              六月 2023
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/05/">
+            <span class="card-archive-list-date">
+              五月 2023
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">366</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-30T03:49:19.260Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By 火苗</span></div><div class="footer_custom_text"><img src="https://haiyong.site/img/icp.png" alt="ICP" style="height:1.2em;vertical-align:middle"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:white" target="_blank">京ICP备2022021138号-2</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.4.3"></script><script src="/js/main.js?v=5.4.3"></script><div class="js-pjax"></div><script async data-pjax src="/js/site-stat.js"></script></div></body></html>

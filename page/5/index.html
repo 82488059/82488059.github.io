@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>火苗的博客 - 火苗999℃的博客</title><meta name="author" content="火苗"><meta name="copyright" content="火苗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="多情自古空余恨，好梦由来最易醒"><script type="application/ld+json"></script><link rel="shortcut icon" href="/picture/favicon.png"><link rel="canonical" href="http://www.xssl.online/page/5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.4.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '火苗的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">火苗的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">火苗的博客</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/20230427/2023/04/cmake%E9%85%8D%E4%BD%BF%E7%94%A8boost/" title="cmake配使用boost"><img class="post-bg" src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="cmake配使用boost"></a></div><div class="recent-post-info"><a class="article-title" href="/20230427/2023/04/cmake%E9%85%8D%E4%BD%BF%E7%94%A8boost/" title="cmake配使用boost">cmake配使用boost</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-27T13:22:32.000Z" title="发表于 2023-04-27 21:22:32">2023-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/cmake/">cmake</a></span></div><div class="content">cmake配使用boost1234567891011# boostlink_directories(&quot;/usr/locate/boost/&quot;)# find find_package(Boost COMPONENTS json &quot;system&quot; filesystem program_options locale json REQUIRED)if(Boost_FOUND)  include_directories($&#123;Boost_INCLUDE_DIRS&#125;)  MESSAGE( STATUS &quot;Boost_INCLUDE_DIRS = $&#123;Boost_INCLUDE_DIRS&#125;.&quot;)  MESSAGE( STATUS &quot;Boost_LIBRARIES = $&#123;Boost_LIBRARIES&#125;.&quot;)  MESSAGE( STATUS &quot;Boost_LIB_VERSION = $&#123;Boost_LIB_VERSION&#125;.&...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20230425/2023/04/RTC%E8%BF%90%E8%A1%8C%E6%97%B6%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5/" title="/RTC（运行时错误检查）"><img class="post-bg" src="/picture/flame.gif" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="/RTC（运行时错误检查）"></a></div><div class="recent-post-info"><a class="article-title" href="/20230425/2023/04/RTC%E8%BF%90%E8%A1%8C%E6%97%B6%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5/" title="/RTC（运行时错误检查）">/RTC（运行时错误检查）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-25T13:33:32.000Z" title="发表于 2023-04-25 21:33:32">2023-04-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/cmake/">cmake</a></span></div><div class="content">/RTC（运行时错误检查）语法/RTC1/RTCc/RTCs/RTCu 参数/RTC1等效于 /RTCsu。 /RTCc报告何时向较小的数据类型赋值会导致数据丢失。 例如，它报告 short 类型值 0x0101 是否已分配给类型为 char 的变量。 此选项可以报告你要在什么情况下进行截断。 例如，当需要返回 int 的前 8 位作为 char 时。 由于 /RTCc 在分配导致信息丢失的情况下会导致运行时错误，因此请首先屏蔽所需的信息以避免运行时错误。 例如： 123456789101112#include &lt;crtdbg.h&gt;char get8bits(unsigned value, int position) &#123;   _ASSERT(position &lt; 32);   return (char)(value &gt;&gt; position);   // Try the following line instead:   // return (char)((value &gt;&gt; position) &amp; 0xff);&#125;...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20230425/2023/04/cmake%E5%8D%95%E7%8B%AC%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7/" title="cmake使用/clr"><img class="post-bg" src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="cmake使用/clr"></a></div><div class="recent-post-info"><a class="article-title" href="/20230425/2023/04/cmake%E5%8D%95%E7%8B%AC%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7/" title="cmake使用/clr">cmake使用/clr</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-25T13:23:32.000Z" title="发表于 2023-04-25 21:23:32">2023-04-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/cmake/">cmake</a></span></div><div class="content">cmake use /clrThere are three options (1) Collect the affected source files in dedicated directories with aCMakeLists.txt and remove “-g” from CMAKE_{C,CXX}_FLAGS_DEBUG therein.However, the sources must go into targets defined in the directory’sCMakeLists.txt; maybe, you need to add particular static librariesbuilt from these sources, provided your toolchain supports this. (2) Externalize the affected sources and reintegrate them as anexternal project built with the same toolchain but differe...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20230425/2023/04/cmake%E9%93%BE%E6%8E%A5boost/" title="cmake链接boost"><img class="post-bg" src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="cmake链接boost"></a></div><div class="recent-post-info"><a class="article-title" href="/20230425/2023/04/cmake%E9%93%BE%E6%8E%A5boost/" title="cmake链接boost">cmake链接boost</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-25T13:22:32.000Z" title="发表于 2023-04-25 21:22:32">2023-04-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/cmake/">cmake</a></span></div><div class="content">cmake链接boost1234567891011121314# boostif(MSVC)# vs会自动链接else()  link_directories(&quot;/usr/locate/boost&quot;) # BOOST 安装位置  find_package(Boost COMPONENTS json system filesystem program_options locale json REQUIRED)  if(Boost_FOUND)    include_directories($&#123;Boost_INCLUDE_DIRS&#125;)    MESSAGE( STATUS &quot;Boost_INCLUDE_DIRS = $&#123;Boost_INCLUDE_DIRS&#125;.&quot;)    MESSAGE( STATUS &quot;Boost_LIBRARIES = $&#123;Boost_LIBRARIES&#125;.&quot;)    MESSAGE( STATUS &quot;Boost_LIB_VERSION...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20230421/2023/04/cmake%E5%BC%95%E5%85%A5%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%BA%93/" title="cmake引入不同版本的库"><img class="post-bg" src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="cmake引入不同版本的库"></a></div><div class="recent-post-info"><a class="article-title" href="/20230421/2023/04/cmake%E5%BC%95%E5%85%A5%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%BA%93/" title="cmake引入不同版本的库">cmake引入不同版本的库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-21T13:22:32.000Z" title="发表于 2023-04-21 21:22:32">2023-04-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/cmake/">cmake</a></span></div><div class="content">cmake引入不同版本的库cmake引入不同版本的库 12345678910111213target_link_libraries($&#123;PROJECT_NAME&#125; PRIVATE                        debug opencv_core440d.lib                         debug opencv_highgui440d.lib                        debug opencv_imgproc440d.lib                         debug opencv_imgcodecs440d.lib                         debug opencv_video440d.lib                        debug opencv_videoio440d.lib                         optimized opencv_core440.lib                         optimize...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20230421/2023/04/cmake%E7%94%9F%E6%88%90%E5%90%8E%E4%BA%8B%E4%BB%B6/" title="cmake生成后事件"><img class="post-bg" src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="cmake生成后事件"></a></div><div class="recent-post-info"><a class="article-title" href="/20230421/2023/04/cmake%E7%94%9F%E6%88%90%E5%90%8E%E4%BA%8B%E4%BB%B6/" title="cmake生成后事件">cmake生成后事件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-21T13:22:32.000Z" title="发表于 2023-04-21 21:22:32">2023-04-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/cmake/">cmake</a></span></div><div class="content">cmake生成后事件使用cmake的add_custom_command复件生成的库到../lib。 12345add_custom_command(TARGET $&#123;PROJECT_NAME&#125; POST_BUILD        COMMAND $&#123;CMAKE_COMMAND&#125; -E copy_if_different          &quot;$&lt;$&lt;CONFIG:Debug&gt;:./debug/test-d.dll&gt;&quot;  # debug        &quot;$&lt;$&lt;CONFIG:Release&gt;:./release/test.dll&gt;&quot;  # release        &quot;../lib&quot;)   </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20230417/2023/04/qt%E6%89%98%E7%9B%98%E8%8F%9C%E5%8D%95%E5%8D%8A%E9%80%8F%E6%98%8E/" title="qt托盘菜单半透明"><img class="post-bg" src="/picture/flame.gif" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="qt托盘菜单半透明"></a></div><div class="recent-post-info"><a class="article-title" href="/20230417/2023/04/qt%E6%89%98%E7%9B%98%E8%8F%9C%E5%8D%95%E5%8D%8A%E9%80%8F%E6%98%8E/" title="qt托盘菜单半透明">qt托盘菜单半透明</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-17T13:22:32.000Z" title="发表于 2023-04-17 21:22:32">2023-04-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/qt/">qt</a></span></div><div class="content">qt托盘菜单半透明1234567891011121314151617181920212223242526272829303132QMenu#toptoolbarmenu &#123;    padding: 10px 0;    border-radius: 15px;    background-color: rgba(38, 40, 42, 0.7);&#125;QMenu#toptoolbarmenu::separator &#123;    height: 2px;    margin: 6px 0;    background-color: rgba(255, 255, 255, 1);&#125;QMenu#toptoolbarmenu::icon &#123;    padding: 0 0 0 10px;&#125;QMenu#toptoolbarmenu::item &#123;    color: white;    padding: 3px 10px;    font-weight: bold;    background-color: transparen...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20230410/2023/04/python%E9%81%8D%E5%8E%86%E7%9B%AE%E5%BD%95%E5%8A%A0%E6%B0%B4%E5%8D%B0/" title="python遍历目录加水印"><img class="post-bg" src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="python遍历目录加水印"></a></div><div class="recent-post-info"><a class="article-title" href="/20230410/2023/04/python%E9%81%8D%E5%8E%86%E7%9B%AE%E5%BD%95%E5%8A%A0%E6%B0%B4%E5%8D%B0/" title="python遍历目录加水印">python遍历目录加水印</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-10T13:22:32.000Z" title="发表于 2023-04-10 21:22:32">2023-04-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/qt/">qt</a></span></div><div class="content">python遍历目录加水印12345678910111213141516171819202122232425262728293031323334353637from watermarker.marker import  add_markimport osimport shutildef mark(file, outdir, mark = &quot;火苗999℃&quot;):    add_mark(file = file, out = outdir, mark = mark            #, color = &quot;#000000&quot;            , opacity=0.1, angle=30, space=300, size=20)    return def mark_dir2(root, out):    if not os.path.exists(out):        # os.path.isdir(out):        os.mkdir(out)    files = os.listdir(root)    for fname...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20230408/2023/04/boost%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E9%97%AE%E9%A2%98/" title="boost消息队列问题"><img class="post-bg" src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="boost消息队列问题"></a></div><div class="recent-post-info"><a class="article-title" href="/20230408/2023/04/boost%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E9%97%AE%E9%A2%98/" title="boost消息队列问题">boost消息队列问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-08T13:44:32.000Z" title="发表于 2023-04-08 21:44:32">2023-04-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/boost/">boost</a></span></div><div class="content">boost消息队列问题boost消息队列打不开、读取失败。 windows上x64与x86程序创建的消息队列不能互相通信 同为x64读取失败时请注意receive的buffersize要和创建时的maxsize相同。 </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20230405/2023/04/qt%E4%B8%8B%E6%8B%89%E6%A1%86qss/" title="qt下拉框qss"><img class="post-bg" src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="qt下拉框qss"></a></div><div class="recent-post-info"><a class="article-title" href="/20230405/2023/04/qt%E4%B8%8B%E6%8B%89%E6%A1%86qss/" title="qt下拉框qss">qt下拉框qss</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-05T13:22:32.000Z" title="发表于 2023-04-05 21:22:32">2023-04-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/qt/">qt</a></span></div><div class="content">qt下拉框QComboBox uses the model/view framework for its popup list and to store its items. By default a QStandardItemModel stores the items and a QListView subclass displays the popuplist. QComboBox 使用模型/视图框架作为其弹出列表并存储其项目。默认情况下，QStandardItemModel 存储项目，QListView 子类显示弹出列表。 qss1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162/*下拉框*/QComboBox&#123;    border-radius: 3px;    color: rgb(0,0,0);    border: 1px solid #c2c2c2;;    padding-...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/#content-inner">37</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">火苗</div><div class="author-info-description">多情自古空余恨，好梦由来最易醒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" href="http://www.xssl.online/"><i class="/assets/images/favicon.png"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">每天都有一个好心情</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent"><img src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译libtorrent"/></a><div class="content"><a class="title" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent">windows编译libtorrent</a><time datetime="2024-05-23T13:44:32.000Z" title="发表于 2024-05-23 21:44:32">2024-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost"><img src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译boost"/></a><div class="content"><a class="title" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost">windows编译boost</a><time datetime="2024-05-08T13:44:32.000Z" title="发表于 2024-05-08 21:44:32">2024-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux"><img src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="vscode远程调试linux"/></a><div class="content"><a class="title" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux">vscode远程调试linux</a><time datetime="2023-12-21T12:05:00.000Z" title="发表于 2023-12-21 20:05:00">2023-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程"><img src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="linux服务检查进程"/></a><div class="content"><a class="title" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程">linux服务检查进程</a><time datetime="2023-12-01T12:05:00.000Z" title="发表于 2023-12-01 20:05:00">2023-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务"><img src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="ubuntu配置vnc服务"/></a><div class="content"><a class="title" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务">ubuntu配置vnc服务</a><time datetime="2023-11-03T12:05:00.000Z" title="发表于 2023-11-03 20:05:00">2023-11-03</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">81</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/maze/"><span class="card-category-list-name">maze</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/search/"><span class="card-category-list-name">search</span><span class="card-category-list-count">34</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/sort/"><span class="card-category-list-name">sort</span><span class="card-category-list-count">33</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/aws/"><span class="card-category-list-name">aws</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/boost/"><span class="card-category-list-name">boost</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/build/"><span class="card-category-list-name">build</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/c/"><span class="card-category-list-name">c++</span><span class="card-category-list-count">110</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/aws/" style="font-size: 1.28em; color: #99a0aa">aws</a> <a href="/tags/maze/" style="font-size: 1.39em; color: #99a5b5">maze</a> <a href="/tags/proxy/" style="font-size: 1.17em; color: #999ca0">proxy</a> <a href="/tags/shell/" style="font-size: 1.32em; color: #99a2ae">shell</a> <a href="/tags/boost/" style="font-size: 1.43em; color: #99a6b8">boost</a> <a href="/tags/video/" style="font-size: 1.1em; color: #999">video</a> <a href="/tags/pygame/" style="font-size: 1.35em; color: #99a3b1">pygame</a> <a href="/tags/lua/" style="font-size: 1.17em; color: #999ca0">lua</a> <a href="/tags/tools/" style="font-size: 1.14em; color: #999a9c">tools</a> <a href="/tags/opengl/" style="font-size: 1.17em; color: #999ca0">opengl</a> <a href="/tags/redis/" style="font-size: 1.17em; color: #999ca0">redis</a> <a href="/tags/network/" style="font-size: 1.1em; color: #999">network</a> <a href="/tags/s3-sync/" style="font-size: 1.1em; color: #999">s3 sync</a> <a href="/tags/ustar/" style="font-size: 1.1em; color: #999">ustar</a> <a href="/tags/centos/" style="font-size: 1.1em; color: #999">centos</a> <a href="/tags/git/" style="font-size: 1.17em; color: #999ca0">git</a> <a href="/tags/ffmpeg/" style="font-size: 1.21em; color: #999da3">ffmpeg</a> <a href="/tags/cp/" style="font-size: 1.1em; color: #999">cp</a> <a href="/tags/windows/" style="font-size: 1.39em; color: #99a5b5">windows</a> <a href="/tags/minizip/" style="font-size: 1.1em; color: #999">minizip</a> <a href="/tags/base64/" style="font-size: 1.1em; color: #999">base64</a> <a href="/tags/py/" style="font-size: 1.1em; color: #999">py</a> <a href="/tags/vs/" style="font-size: 1.28em; color: #99a0aa">vs</a> <a href="/tags/icon/" style="font-size: 1.1em; color: #999">icon</a> <a href="/tags/TortriseGit/" style="font-size: 1.14em; color: #999a9c">TortriseGit</a> <a href="/tags/mov/" style="font-size: 1.1em; color: #999">mov</a> <a href="/tags/unicode/" style="font-size: 1.1em; color: #999">unicode</a> <a href="/tags/cocos/" style="font-size: 1.21em; color: #999da3">cocos</a> <a href="/tags/libzip/" style="font-size: 1.1em; color: #999">libzip</a> <a href="/tags/service/" style="font-size: 1.1em; color: #999">service</a> <a href="/tags/hex/" style="font-size: 1.1em; color: #999">hex</a> <a href="/tags/samb/" style="font-size: 1.1em; color: #999">samb</a> <a href="/tags/svn/" style="font-size: 1.1em; color: #999">svn</a> <a href="/tags/transcoding/" style="font-size: 1.17em; color: #999ca0">transcoding</a> <a href="/tags/go/" style="font-size: 1.17em; color: #999ca0">go</a> <a href="/tags/sql/" style="font-size: 1.25em; color: #999fa7">sql</a> <a href="/tags/sort/" style="font-size: 1.46em; color: #99a8bc">sort</a> <a href="/tags/udp/" style="font-size: 1.17em; color: #999ca0">udp</a> <a href="/tags/python/" style="font-size: 1.5em; color: #99a9bf">python</a> <a href="/tags/database/" style="font-size: 1.1em; color: #999">database</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/05/">
+            <span class="card-archive-list-date">
+              五月 2024
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/12/">
+            <span class="card-archive-list-date">
+              十二月 2023
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/11/">
+            <span class="card-archive-list-date">
+              十一月 2023
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/09/">
+            <span class="card-archive-list-date">
+              九月 2023
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/08/">
+            <span class="card-archive-list-date">
+              八月 2023
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/07/">
+            <span class="card-archive-list-date">
+              七月 2023
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/06/">
+            <span class="card-archive-list-date">
+              六月 2023
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/05/">
+            <span class="card-archive-list-date">
+              五月 2023
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">366</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-30T03:49:19.260Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By 火苗</span></div><div class="footer_custom_text"><img src="https://haiyong.site/img/icp.png" alt="ICP" style="height:1.2em;vertical-align:middle"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:white" target="_blank">京ICP备2022021138号-2</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.4.3"></script><script src="/js/main.js?v=5.4.3"></script><div class="js-pjax"></div><script async data-pjax src="/js/site-stat.js"></script></div></body></html>

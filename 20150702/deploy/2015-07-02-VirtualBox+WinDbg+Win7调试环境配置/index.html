@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>VirtualBox+WinDbg+Win7调试环境配置 | 火苗的博客</title><meta name="author" content="火苗"><meta name="copyright" content="火苗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="VirtualBox+WinDbg+Win7调试环境配置"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "VirtualBox+WinDbg+Win7调试环境配置",
+  "url": "http://www.xssl.online/20150702/deploy/2015-07-02-VirtualBox+WinDbg+Win7%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/",
+  "image": "http://www.xssl.online/picture/flame.gif",
+  "datePublished": "2015-07-02T13:17:37.000Z",
+  "dateModified": "2023-04-11T03:07:55.036Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "火苗",
+      "url": "http://www.xssl.online"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/picture/favicon.png"><link rel="canonical" href="http://www.xssl.online/20150702/deploy/2015-07-02-VirtualBox+WinDbg+Win7%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.4.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'VirtualBox+WinDbg+Win7调试环境配置',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/picture/flame.gif);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">火苗的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">VirtualBox+WinDbg+Win7调试环境配置</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">VirtualBox+WinDbg+Win7调试环境配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2015-07-02T13:17:37.000Z" title="发表于 2015-07-02 21:17:37">2015-07-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-11T03:07:55.036Z" title="更新于 2023-04-11 11:07:55">2023-04-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c/">c++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c/dbg/">dbg</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>1.配置虚拟机串口如图</p>
+<p>勾选启用串口-&gt;端口选择COM1-&gt;端口模式选择主机管道-&gt;勾选创建管道-&gt;端口文件位置输入:<code>\\.\pipe\com1</code></p>
+<p><img src="/assets/images/post/old/20150702203102575.dib" alt="20150702203102575" title="20150702203102575"></p>
+<p>2.配置虚拟机里面的系统，开启调试模式<br>Win7 下以管理员身份进入CMD分别输入以下命令：<br>bcdedit /enum osloader</p>
+<p>查看系统情况。</p>
+<p><img src="/assets/images/post/old/20150708151953379.png" alt="20150708151953379" title="20150708151953379"></p>
+<p>bcdedit /copy {current} /d Win7Dbg</p>
+<p>复制启动项</p>
+<p><img src="/assets/images/post/old/20150708152146711.png" alt="20150708152146711" title="20150708152146711"></p>
+<p>bcdedit /displayorder {current} {142b1de8-130a-11e5-b852-9ff41a342c36}</p>
+<p>注 {142b1de8-130a-11e5-b852-9ff41a342c36}是上一步生成的GUID。增加系统启动时的加载项</p>
+<p><img src="/assets/images/post/old/20150708152416965.png" alt="20150708152416965" title="20150708152416965"></p>
+<p>bcdedit /debug {142b1de8-130a-11e5-b852-9ff41a342c36} on</p>
+<p>启动调试</p>
+<p><img src="/assets/images/post/old/20150708152559706.png" alt="20150708152559706" title="20150708152559706"></p>
+<p>bcdedit /bootdebug {142b1de8-130a-11e5-b852-9ff41a342c36} on</p>
+<p>启动BOOT调试</p>
+<p><img src="/assets/images/post/old/20150708152712268.png" alt="20150708152712268" title="20150708152712268"></p>
+<p>bcdedit<br>查看设置Win7Dbg就是用来调试的系统。</p>
+<p><img src="/assets/images/post/old/20150708152808806.png" alt="20150708152808806" title="20150708152808806"></p>
+<p>重新启动系统</p>
+<p><img src="/assets/images/post/old/20150708152950588.png" alt="20150708152950588" title="20150708152950588"></p>
+<p>3.配置WinDbg</p>
+<p>创建快捷方式，打开属性在目标栏。 windDbg.exe 后面输入</p>
+<p> -b -k com:pipe,port=\.\pipe\com1,baud=11520,resets=0<br>-b与.exe中间有空格 </p>
+<p><img src="/assets/images/post/old/20150702211129089.dib" alt="20150702211129089" title="20150702211129089"></p>
+<p>4.双击快捷方式运行WinDbg</p>
+<p><img src="/assets/images/post/old/20150702211328528.jpg" alt="20150702211328528" title="20150702211328528"></p>
+<p>WinDbg输出 int 3时虚拟机系统会卡死。此时在kd&gt;后面输入g</p>
+<p><img src="/assets/images/post/old/20150702211556369.dib" alt="20150702211556369" title="20150702211556369"></p>
+<p>系统恢复正常运行。可以开始调试驱动了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.xssl.online">火苗</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.xssl.online/20150702/deploy/2015-07-02-VirtualBox+WinDbg+Win7%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">http://www.xssl.online/20150702/deploy/2015-07-02-VirtualBox+WinDbg+Win7%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.xssl.online" target="_blank">火苗的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c/">c++</a><a class="post-meta__tags" href="/tags/windows/">windows</a><a class="post-meta__tags" href="/tags/dbg/">dbg</a><a class="post-meta__tags" href="/tags/virtualbox/">virtualbox</a></div><div class="post-share"><div class="social-share" data-image="/picture/flame.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/20150710/deploy/2015-07-10-%E5%AF%92%E6%B1%9F%E7%8B%AC%E9%92%93-Windows%E5%86%85%E6%A0%B8%E5%AE%89%E5%85%A8%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0-%E7%AC%AC3%E7%AB%A0%E4%BB%A3%E7%A0%81%E5%92%8C%E7%AC%94%E8%AE%B0/" title="寒江独钓-Windows内核安全编程笔记-第3章代码和笔记"><img class="cover" src="/picture/src/cover/20220722171029.jpg" onerror="onerror=null;src='/picture/flame.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">寒江独钓-Windows内核安全编程笔记-第3章代码和笔记</div></div><div class="info-2"><div class="info-item-1">12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211311411511611711811912012112212312412512612712812913013113213313413513613713813914014114214314414514614714814915015115215315415515615715815916016116216316416516616716816917017117217317417517617717817918018118218318418518618718818919019119219319419519619719819920020120...</div></div></div></a><a class="pagination-related" href="/20150702/deploy/2015-07-02-MFC%E7%9A%84PNG%E5%9B%BE%E7%89%87%E6%8C%89%E9%92%AE/" title="MFC的PNG图片按钮"><img class="cover" src="/assets/images/post/old/mfc.png" onerror="onerror=null;src='/picture/flame.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">MFC的PNG图片按钮</div></div><div class="info-2"><div class="info-item-1">MFC的PNG图片按钮 pngbutton.h123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566#pragma once#include &quot;afxwin.h&quot; / // 工程: YF_GCM -&gt; ButtonDemo // 作者: **// 描述: 自绘制位图按钮// 主要函数：//         SetButtonUpBitmapEx()设置鼠标放置在按钮上的图片//         SetButtonDownBitmapEx()设置按钮按下的图片//         SetButtonNormalBitmapEx()设置鼠标不在按钮是的图片// 日期: 2013.12.16// 版本: 1.0// 修改: / // CBitmapButtonEx class CPngButton : public CBitmapButton&#123;    DECLA...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/20131203/deploy/2013-12-03-%E5%8F%96%E5%BE%97%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%9B%AE%E5%BD%95/" title="取得程序运行目录"><img class="cover" src="/assets/images/post/old/mfc.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2013-12-03</div><div class="info-item-2">取得程序运行目录</div></div><div class="info-2"><div class="info-item-1">1234// 获取当前进程的当前目录char path[MAX_PATH];memset(0, path, MAX_PATH);GetCurrentDirectory(MAX_PATH,curr_all_path);   123456789101112131415161718// 取得程序运行目录TCHAR szPathName[MAX_PATH];    memset(szPathName, 0, MAX_PATH);    if (0 == GetModuleFileName(NULL, szPathName, MAX_PATH))    &#123;        return _T(&quot;&quot;);    &#125;    CString rValue;    rValue = szPathName;    for (int i = rValue.GetLength(); i &gt; 0;  --i)    &#123;        if (&#x27;\\&#x27; == rValue[i-1])        &#123;            r...</div></div></div></a><a class="pagination-related" href="/20160615/deploy/2016-06-15-VS%E9%80%9A%E8%BF%87MAP%E8%BF%BD%E8%B8%AA%E5%BC%82%E5%B8%B8%E4%BB%A3%E7%A0%81%E7%9A%84%E4%BD%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" title="VS通过.map文件查找异常代码的位置"><img class="cover" src="/picture/flame.gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2016-06-15</div><div class="info-item-2">VS通过.map文件查找异常代码的位置</div></div><div class="info-2"><div class="info-item-1">VS通过.map文件查找异常代码的位置一、配置VS 1.配置禁用优化  2.配置生成汇编代码   3.配置生成MAP文件  二、查找崩溃代码位置 1.查看崩溃异常偏移  此处异常偏移为000019c3 2.查看程序加载地址  3.对照.MAP文件，查找第一处大于程序加载地址（00400000）+异常偏移（000019c3）的位置  004019e0是第一处大于004019c3的位置，那么崩溃就位于CTestHtmlDlg类OnButtonOk函数中， 4.查看TestHtml.cod  崩溃代码位于OnButtonOK函数 00000+(004019c3-004019b0)=00013的位置注意部分函数起始地址不是00000； 可以看出*p=0为崩溃代码。 </div></div></div></a><a class="pagination-related" href="/20210521/deploy/2021-05-21-c++windows%E6%9C%8D%E5%8A%A1%E7%A4%BA%E4%BE%8B/" title="c++windows服务示例"><img class="cover" src="/picture/src/cover/search.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-21</div><div class="info-item-2">c++windows服务示例</div></div><div class="info-2"><div class="info-item-1">下面是一个完整的服务示例。 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281291301311321331341351361371381391401411421431441451461471481491501511521531541551561571581591601611621631641651661671681691701711721731741751761771781791801811821831841851861871881891901911921931941951961...</div></div></div></a><a class="pagination-related" href="/20210705/deploy/2021-07-05-c++%E6%98%A0%E5%B0%84%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/" title="c++映射网络驱动器"><img class="cover" src="/picture/src/cover/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-05</div><div class="info-item-2">c++映射网络驱动器</div></div><div class="info-2"><div class="info-item-1">c++映射网络驱动器mount1234567891011121314151617181920212223242526272829303132333435363738394041424344bool sys::mount2(const std::string&amp; szSource, const std::string&amp; szTarget, const std::string&amp; szUser, const std::string&amp; szPwd, std::string&amp; err)&#123;    bool res = false;    do    &#123;#ifdef WIN32 #ifdef UNICODE         std::wstring source = mm::Charset::ANSIToUnicode(szSource.c_str());        std::wstring target = mm::Charset::ANSIToUnicode(szTarget.c_str());        std::wstr...</div></div></div></a><a class="pagination-related" href="/20210706/deploy/2021-07-06-c++%E8%AF%BB%E5%8F%96%E6%B3%A8%E5%86%8C%E8%A1%A8%EF%BC%8C%E8%AF%BB%E5%8F%96%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE/" title="c++ 读取注册表，读取服务安装位置"><img class="cover" src="/picture/flame.gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-06</div><div class="info-item-2">c++ 读取注册表，读取服务安装位置</div></div><div class="info-2"><div class="info-item-1">c++ 读取注册表，读取服务安装位置 123456789101112131415161718192021222324252627282930313233343536373839404142434445bool DogWork::GetServicePath(const TCHAR* name, mm::mstring &amp; path)&#123;    bool res = false;#ifdef WIN32    // GetServiceDisplayName()    mm::mstring lpSubKey(TEXT(&quot;SYSTEM\\CurrentControlSet\\services\\&quot;));    lpSubKey += name;    do    &#123;        HKEY hKey;        //HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\testdog        DWORD lResult = ::RegOpenKeyEx(HKEY_LOCAL_...</div></div></div></a><a class="pagination-related" href="/20210812/deploy/2021-08-12-c++%E5%8F%96%E7%BD%91%E7%BB%9C%E6%94%B6%E5%8F%91%E5%AD%97%E8%8A%82%E6%95%B0/" title="c++获取网络收发字节数"><img class="cover" src="/picture/src/cover/20220722171029.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-12</div><div class="info-item-2">c++获取网络收发字节数</div></div><div class="info-2"><div class="info-item-1">12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211311411511611711811912012112212312412512612712812913013113213313413513613713813914014114214314414514614714814915015115215315415515615715815916016116216316416516616716816917017117217317417517617717817918018118218318418518618718818919019119219319419519619719819920020120...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">火苗</div><div class="author-info-description">多情自古空余恨，好梦由来最易醒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" href="http://www.xssl.online/"><i class="/assets/images/favicon.png"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">每天都有一个好心情</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent"><img src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译libtorrent"/></a><div class="content"><a class="title" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent">windows编译libtorrent</a><time datetime="2024-05-23T13:44:32.000Z" title="发表于 2024-05-23 21:44:32">2024-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost"><img src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译boost"/></a><div class="content"><a class="title" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost">windows编译boost</a><time datetime="2024-05-08T13:44:32.000Z" title="发表于 2024-05-08 21:44:32">2024-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux"><img src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="vscode远程调试linux"/></a><div class="content"><a class="title" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux">vscode远程调试linux</a><time datetime="2023-12-21T12:05:00.000Z" title="发表于 2023-12-21 20:05:00">2023-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程"><img src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="linux服务检查进程"/></a><div class="content"><a class="title" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程">linux服务检查进程</a><time datetime="2023-12-01T12:05:00.000Z" title="发表于 2023-12-01 20:05:00">2023-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务"><img src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="ubuntu配置vnc服务"/></a><div class="content"><a class="title" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务">ubuntu配置vnc服务</a><time datetime="2023-11-03T12:05:00.000Z" title="发表于 2023-11-03 20:05:00">2023-11-03</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By 火苗</span></div><div class="footer_custom_text"><img src="https://haiyong.site/img/icp.png" alt="ICP" style="height:1.2em;vertical-align:middle"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:white" target="_blank">京ICP备2022021138号-2</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.4.3"></script><script src="/js/main.js?v=5.4.3"></script><div class="js-pjax"></div><script async data-pjax src="/js/site-stat.js"></script></div></body></html>

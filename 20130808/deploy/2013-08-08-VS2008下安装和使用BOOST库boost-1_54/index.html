@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>VS2008下安装和使用BOOST库boost-1_54 | 火苗的博客</title><meta name="author" content="火苗"><meta name="copyright" content="火苗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="VS2008下安装和使用BOOST库boost-1_54, boost, c++"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "VS2008下安装和使用BOOST库boost-1_54",
+  "url": "http://www.xssl.online/20130808/deploy/2013-08-08-VS2008%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8BOOST%E5%BA%93boost-1_54/",
+  "image": "http://www.xssl.online/picture/src/cover/language.jpeg",
+  "datePublished": "2013-08-08T03:42:48.000Z",
+  "dateModified": "2022-09-05T01:53:18.164Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "火苗",
+      "url": "http://www.xssl.online"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/picture/favicon.png"><link rel="canonical" href="http://www.xssl.online/20130808/deploy/2013-08-08-VS2008%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8BOOST%E5%BA%93boost-1_54/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.4.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'VS2008下安装和使用BOOST库boost-1_54',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/picture/src/cover/language.jpeg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">火苗的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">VS2008下安装和使用BOOST库boost-1_54</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">VS2008下安装和使用BOOST库boost-1_54</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2013-08-08T03:42:48.000Z" title="发表于 2013-08-08 11:42:48">2013-08-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-05T01:53:18.164Z" title="更新于 2022-09-05 09:53:18">2022-09-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c/">c++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c/boost/">boost</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>下载boost库(最好去官网下,一般有SGI(GCC+用的较多)和BOOST之分,VS下用BOOST)<br>下载boost_1_54_0压缩文件，解压缩到d：\boost_1_54_0(可以任何位置,你觉得合适就可以)目录下</p>
+<p>1.编译bjam<br>从开始-&gt;程序-&gt;Microsoft Visual Studio 2008-&gt;Visual Studio Tools-&gt;Visual Studio 2008 命令提示（一定要从这进），命令提示cd到</p>
+<p>d:\boost_1_54_0\下执行bootstrap.bat，会在d:\boost_1_54_0产生　bjam.exe<br>2.编译boost<br>命令提示cd到d:\boost_1_54_0\下執行<br>bjam —without-python —toolset=msvc-9.0 —prefix=d:\boost install<br>　　參數說明<br>　　—without-python 表示不使用 python<br>　　—toolset : 所使用compiler，Visual Studio 2008為msvc-9.0<br>　　—prefix：指定编译后library的安裝目录<br>　　这一步要花很长时间（大约20分钟），看你的电脑速度<br>3.设定vs2008环境<br>启动vs2008-&gt;工具-&gt;选项-&gt; 项目和解决方案 -&gt; VC++目录<br>下拉　库文件　加上d:\boost\lib      或将D:\boost\lib下的所有lib文件放入 D:\Program Files\Microsoft Visual Studio 9.0\VC\lib文件夹下。(下划线部分是你安装的VS2008路径)。<br>下拉　包含文件　加上d:\boost\include\boost-1_54 或将D:\boost\下的include文件夹整个放入 D:\Program Files\Microsoft Visual Studio 9.0\VC\include路径下(下划线部分是你安装的VS2008路径)。<br>这样基本已经完成了！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.xssl.online">火苗</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.xssl.online/20130808/deploy/2013-08-08-VS2008%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8BOOST%E5%BA%93boost-1_54/">http://www.xssl.online/20130808/deploy/2013-08-08-VS2008%E4%B8%8B%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8BOOST%E5%BA%93boost-1_54/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.xssl.online" target="_blank">火苗的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/boost/">boost</a><a class="post-meta__tags" href="/tags/c/">c++</a></div><div class="post-share"><div class="social-share" data-image="/picture/src/cover/language.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/20130808/deploy/2013-08-08-boost%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%B8%8D%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" title="boost正则表达式判断字符串是不是正确的四则运算"><img class="cover" src="/picture/flame.gif" onerror="onerror=null;src='/picture/flame.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">boost正则表达式判断字符串是不是正确的四则运算</div></div><div class="info-2"><div class="info-item-1">使用正则表达式判断字符串是否符合四则混合运算规则。 123456789&quot;[^0-9\\.\\+\\-\\*\\/\\(\\)]&quot;   // 除了数字小数点和运算符之外的符号&quot;[\\+\\-\\*\\/][)]|[)][0-9.]&quot;   // )前面有运算符号+-*/  )后面有数字&quot;[0-9\\.][(]|[(][\\*\\/]&quot;         // (前面有数字 (后面有运算符号*/&quot;\\.[0-9]*\\.&quot;                      // 数字小数点超过2个(包括两个)&quot;[\\+\\-\\*\\/]\\.&#123;1,&#125;[\\+\\-\\*\\/]&quot; // 两个运算符号只间只有小数点  &quot;[\\+\\-\\*\\/][\\*\\/]|[\\+\\-\\*\\/][\\+\\-][\\+\\-\\*\\/]&quot;      // 三个运算符号连接, 两个*/运算符号连接&quot;^[\\*\\/]|[\\+\\-\\*\\/]$&...</div></div></div></a><a class="pagination-related" href="/20130807/deploy/2013-08-07-%E5%9B%9B%E5%88%99%E6%B7%B7%E5%90%88%E8%BF%90%E7%AE%97%EF%BC%8C%E8%BE%93%E5%85%A5%E4%B8%8D%E5%B8%A6%E7%A9%BA%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%82%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C/" title="四则混合运算"><img class="cover" src="/picture/src/cover/search.png" onerror="onerror=null;src='/picture/flame.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">四则混合运算</div></div><div class="info-2"><div class="info-item-1">四则混合运算，输入不带空格的字符串。返回结果存放在rValue中 可以使用+-*/和(),正负数前可以带符号 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170struct _data &#123;    int dataType;    ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/20220924/cpp/udp%E7%BB%84%E6%92%AD/" title="boost多网卡udp组播绑定网卡发送"><img class="cover" src="/picture/src/cover/cpp.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-24</div><div class="info-item-2">boost多网卡udp组播绑定网卡发送</div></div><div class="info-2"><div class="info-item-1">boost多网卡udp组播绑定网卡发送多网卡组播的时候，发送端要遍历本地ip进行发送。 sender.h123456789101112131415161718192021222324252627282930313233#pragma once//// sender.h// udp组播发送类//#include &lt;iostream&gt;#include &lt;sstream&gt;#include &lt;string&gt;#include &lt;boost/asio.hpp&gt;#include &quot;sender.h&quot;class multicast_sender&#123;public:    multicast_sender(boost::asio::io_context&amp; io_context        , const boost::asio::ip::address&amp; multicast_address        , const unsigned short  multicast_port        , cons...</div></div></div></a><a class="pagination-related" href="/20220924/cpp/cpp17-std-from_chars/" title="c++17的std::from_chars"><img class="cover" src="/picture/src/cover/cpp.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-24</div><div class="info-item-2">c++17的std::from_chars</div></div><div class="info-2"><div class="info-item-1">c++17中的std::from_chars1std::from_chars, std::from_chars_result 在头文件&lt;charconv&gt;定义    12345678910111213// (1)	(C++17 起)std::from_chars_result from_chars(const char* first, const char* last, /*see below*/&amp; value, int base = 10);// (2)	(C++17 起)std::from_chars_result from_chars(const char* first, const char* last, float&amp; value, std::chars_format fmt = std::chars_format::general);// (3)	(C++17 起)std::from_chars_result from_chars(const char* first, const char* last, double&amp; value, ...</div></div></div></a><a class="pagination-related" href="/20220924/cpp/udp%E7%BB%84%E6%92%AD%E6%8E%A5%E6%94%B6%E4%B8%8D%E5%88%B0/" title="多网卡udp组播,客户端收不到"><img class="cover" src="/picture/src/cover/cpp.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-24</div><div class="info-item-2">多网卡udp组播,客户端收不到</div></div><div class="info-2"><div class="info-item-1">多网卡udp组播,客户端收不到多网卡组播的时候，发送端要遍历本地ip，给每个ip都发组播包，不能使用&quot;0.0.0.0&quot;。否则有可能收不到。接收端可以绑定&quot;0.0.0.0&quot;进行接收。 代码：发送端http://xssl.online/20220924/cpp/udp%E7%BB%84%E6%92%AD/ 接收端http://xssl.online/20220924/cpp/udp%E7%BB%84%E6%92%AD%E6%8E%A5%E6%94%B6/ </div></div></div></a><a class="pagination-related" href="/20220924/cpp/udp%E7%BB%84%E6%92%AD%E6%8E%A5%E6%94%B6/" title="boost多网卡udp组播绑定网卡接收"><img class="cover" src="/picture/src/cover/cpp.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-24</div><div class="info-item-2">boost多网卡udp组播绑定网卡接收</div></div><div class="info-2"><div class="info-item-1">boost多网卡udp组播绑定网卡接收receiver.h12345678910111213141516171819202122232425262728293031#pragma once//// receiver.cpp// udp组播接收类//#include &lt;array&gt;#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;functional&gt;#include &lt;boost/asio.hpp&gt;class multicast_receiver&#123;public:    multicast_receiver(boost::asio::io_context&amp; io_context        , const boost::asio::ip::address&amp; listen_address        , const unsigned short&amp; multicast_port        , const boost::asio::ip::add...</div></div></div></a><a class="pagination-related" href="/20130808/deploy/2013-08-08-boost%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E4%B8%8D%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" title="boost正则表达式判断字符串是不是正确的四则运算"><img class="cover" src="/picture/flame.gif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2013-08-08</div><div class="info-item-2">boost正则表达式判断字符串是不是正确的四则运算</div></div><div class="info-2"><div class="info-item-1">使用正则表达式判断字符串是否符合四则混合运算规则。 123456789&quot;[^0-9\\.\\+\\-\\*\\/\\(\\)]&quot;   // 除了数字小数点和运算符之外的符号&quot;[\\+\\-\\*\\/][)]|[)][0-9.]&quot;   // )前面有运算符号+-*/  )后面有数字&quot;[0-9\\.][(]|[(][\\*\\/]&quot;         // (前面有数字 (后面有运算符号*/&quot;\\.[0-9]*\\.&quot;                      // 数字小数点超过2个(包括两个)&quot;[\\+\\-\\*\\/]\\.&#123;1,&#125;[\\+\\-\\*\\/]&quot; // 两个运算符号只间只有小数点  &quot;[\\+\\-\\*\\/][\\*\\/]|[\\+\\-\\*\\/][\\+\\-][\\+\\-\\*\\/]&quot;      // 三个运算符号连接, 两个*/运算符号连接&quot;^[\\*\\/]|[\\+\\-\\*\\/]$&...</div></div></div></a><a class="pagination-related" href="/20130815/deploy/2013-08-15-boost__spirit%E9%AA%8C%E8%AF%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E7%AC%A6%E5%90%88%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99/" title="boost::spirit验证字符串是否符合四则运算规则"><img class="cover" src="/picture/src/cover/canvas.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2013-08-15</div><div class="info-item-2">boost::spirit验证字符串是否符合四则运算规则</div></div><div class="info-2"><div class="info-item-1">1234567891011121314151617181920212223#include &lt;iostream&gt;#include &lt;boost/spirit.hpp&gt;  int main()&#123;    using namespace boost::spirit;    using namespace std;    rule&lt;phrase_scanner_t&gt; factor, term, exp;    // 因子 = 实数 | &#x27;(&#x27; , 表达式 , &#x27;)&#x27;;    factor = real_p | (&#x27;(&#x27; &gt;&gt; exp &gt;&gt; &#x27;)&#x27;);    // factor = real_p | !(ch_p(&#x27;+&#x27;)|ch_p(&#x27;-&#x27;)) &gt;&gt; (&#x27;(&#x27; &gt;&gt; exp &gt;&gt; &#x27;)&#x27;)    // 上面注释部分是括号前可以带...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">火苗</div><div class="author-info-description">多情自古空余恨，好梦由来最易醒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" href="http://www.xssl.online/"><i class="/assets/images/favicon.png"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">每天都有一个好心情</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent"><img src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译libtorrent"/></a><div class="content"><a class="title" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent">windows编译libtorrent</a><time datetime="2024-05-23T13:44:32.000Z" title="发表于 2024-05-23 21:44:32">2024-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost"><img src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译boost"/></a><div class="content"><a class="title" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost">windows编译boost</a><time datetime="2024-05-08T13:44:32.000Z" title="发表于 2024-05-08 21:44:32">2024-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux"><img src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="vscode远程调试linux"/></a><div class="content"><a class="title" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux">vscode远程调试linux</a><time datetime="2023-12-21T12:05:00.000Z" title="发表于 2023-12-21 20:05:00">2023-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程"><img src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="linux服务检查进程"/></a><div class="content"><a class="title" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程">linux服务检查进程</a><time datetime="2023-12-01T12:05:00.000Z" title="发表于 2023-12-01 20:05:00">2023-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务"><img src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="ubuntu配置vnc服务"/></a><div class="content"><a class="title" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务">ubuntu配置vnc服务</a><time datetime="2023-11-03T12:05:00.000Z" title="发表于 2023-11-03 20:05:00">2023-11-03</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By 火苗</span></div><div class="footer_custom_text"><img src="https://haiyong.site/img/icp.png" alt="ICP" style="height:1.2em;vertical-align:middle"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:white" target="_blank">京ICP备2022021138号-2</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.4.3"></script><script src="/js/main.js?v=5.4.3"></script><div class="js-pjax"></div><script async data-pjax src="/js/site-stat.js"></script></div></body></html>

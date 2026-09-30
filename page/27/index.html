@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>火苗的博客 - 火苗999℃的博客</title><meta name="author" content="火苗"><meta name="copyright" content="火苗"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="多情自古空余恨，好梦由来最易醒"><script type="application/ld+json"></script><link rel="shortcut icon" href="/picture/favicon.png"><link rel="canonical" href="http://www.xssl.online/page/27/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.4.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '火苗的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">火苗的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">火苗的博客</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/20191115/deploy/2019-11-15-Video-transcodingtr-display-problem/" title="Display resolution is different from video resolution"><img class="post-bg" src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="Display resolution is different from video resolution"></a></div><div class="recent-post-info"><a class="article-title" href="/20191115/deploy/2019-11-15-Video-transcodingtr-display-problem/" title="Display resolution is different from video resolution">Display resolution is different from video resolution</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-15T06:59:39.000Z" title="发表于 2019-11-15 14:59:39">2019-11-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/transcoding/">transcoding</a></span></div><div class="content">问是这样的，有一批竖版(408*720)视频全部转码为横版(720*480)视频,在播放的时候一部分横版显示，一部分竖版显示。 使用VLC查看分辨率都是720*480。 使用ffprobe查看原视频信息  发现有[SAR脚注1 1:1 DAR脚注2] 17:30 播放器会根据DAR来显示视频，在没有DAR参数时会根据视频分辨率来显示视频，所以视频转为横版的时候需要删除DAR信息或者修改DAR信息，才能使播放时为横版。  脚注1. SAR - storage aspect ratio就是对图像采集时，横向采集与纵向采集构成的点阵，横向点数与纵向点数的比值。比如VGA图像640/480 = 4:3，D-1 PAL图像720/576 = 5:4 &#8617;   脚注2. DAR - display aspect ratio就是视频播放时，我们看到的图像宽高的比例，缩放视频也要按这个比例来，否则会使图像看起来被压扁或者拉长了似的。 &#8617;  PAR - pixel aspect ratio（可以理解为单个像素的宽高比）大多数情况为1:1,就是一个正方形像素，否则为长方形像素。...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20191115/deploy/2019-11-15-mfc-CEditView-add-string/" title="MFC CEditView 末尾增加文本"><img class="post-bg" src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="MFC CEditView 末尾增加文本"></a></div><div class="recent-post-info"><a class="article-title" href="/20191115/deploy/2019-11-15-mfc-CEditView-add-string/" title="MFC CEditView 末尾增加文本">MFC CEditView 末尾增加文本</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-15T06:54:08.000Z" title="发表于 2019-11-15 14:54:08">2019-11-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/">c++</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/mfc/">mfc</a></span></div><div class="content">CEditView中使用CEdit作为编辑控件，所以可以通过CEdit的方法来改变CEditView中的文字。取得CEdit的方法： GetEditCtrl的说明：CEditView:: GetEditCtrl调用GetEditCtrl以获取对 “编辑” 视图使用的编辑控件的引用。1CEdit&amp; GetEditCtrl() const; 返回值对CEdit对象的引用。 备注此控件的类型为CEdit, 因此可以使用CEdit成员函数直接操作 Windows 编辑控件。 实现代码如下：  123456789101112//  class CXXXView : public CEditViewint CXXXView::AddString(const CString &amp; string)&#123;    // CEditView::GetEditCtrl 提供对CEdit CEditView对象 (Windows 编辑控件) 的部分的访问。    CEdit&amp; thisEdit = GetEditCtrl();    int nLength = thisEdit...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20191113/deploy/2019-11-13-mov-transcoding/" title="mov转码"><img class="post-bg" src="/picture/flame.gif" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="mov转码"></a></div><div class="recent-post-info"><a class="article-title" href="/20191113/deploy/2019-11-13-mov-transcoding/" title="mov转码">mov转码</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-13T06:51:28.000Z" title="发表于 2019-11-13 14:51:28">2019-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/transcoding/">transcoding</a></span></div><div class="content">使用vlc不能播放mac生成的mov格式视频。 使用VLC转码生成的视频只有1秒。转码不成功。使用ffmpeg转码 1、视频编码格式h264音频复制。转码的视频QuickTimePlayer不能播放。 2、视频使用mpeg4音频复制。转码的视频QuickTimePlayer能正常播放。 原因是因为视频有多音轨。 参考： 1、FFmpeg </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20191112/deploy/2019-11-12-MFC-OnFileNew/" title="在多文档界面中创建文档并修改标题名"><img class="post-bg" src="/assets/images/post/old/mfc.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="在多文档界面中创建文档并修改标题名"></a></div><div class="recent-post-info"><a class="article-title" href="/20191112/deploy/2019-11-12-MFC-OnFileNew/" title="在多文档界面中创建文档并修改标题名">在多文档界面中创建文档并修改标题名</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-12T06:51:28.000Z" title="发表于 2019-11-12 14:51:28">2019-11-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/">c++</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c/mfc/">mfc</a></span></div><div class="content">创建文档模板代码。 12345678910   // create doc templateCMultiDocTemplate* pDocTemplate;pDocTemplate = new CMultiDocTemplate(IDR_TYPE,	RUNTIME_CLASS(CXXDoc),	RUNTIME_CLASS(CChildFrame), // 自定义 MDI 子框架	RUNTIME_CLASS(CXXView));if (!pDocTemplate)	return FALSE;   // add doc templateAddDocTemplate(pDocTemplate); 创建Doc并加入DocManager void CXXApp::OnFileNew() &#123;     if (NULL == m_pDocManager)         return;     // first template position      POSITION posTemplate =  m_pDocManager-&gt;GetFirstDocTemplatePos...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20191111/deploy/2019-11-11-Centos7-forgot-posswork/" title="Centos Reset root password"><img class="post-bg" src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="Centos Reset root password"></a></div><div class="recent-post-info"><a class="article-title" href="/20191111/deploy/2019-11-11-Centos7-forgot-posswork/" title="Centos Reset root password">Centos Reset root password</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-11T12:44:10.000Z" title="发表于 2019-11-11 20:44:10">2019-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">1、机进入启动界面，开机进入启动界面后，要按照屏幕的下方的操作提示迅速按下e键，进入编辑页面。动作要快点,否则5秒就会开始自动进入启动页面了。  2、然后，在这个页面，找到linux16这一行，将之前的ro，改为rw init=sysroot/bin/sh，然后按ctrl+x，进入单用户模式.由于是单用户,就不需要密码进入了：   3、输入命令chroot /sysroot，也就是改变程序执行时所参考的根目录位置,根目录改为/sysroot。然后输入命令passwd root  4、输入命令touch /.autorelabel ,在/目录下创建一个.autorelabel文件，而有这个文件存在，系统在重启时就会对整个文件系统进行relabeling。然后命令exit退出，再命令reboot重启：  reboot重启后自动修改密码，修改成功后系统会再次重启，就可以输入root和新密码，重新登录了。 </div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20191111/deploy/2019-11-11-Embed-Mermaid-Charts-in-Jekyll-without-Plugin/" title="Embed Mermaid Charts in Jekyll without Plugin"><img class="post-bg" src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="Embed Mermaid Charts in Jekyll without Plugin"></a></div><div class="recent-post-info"><a class="article-title" href="/20191111/deploy/2019-11-11-Embed-Mermaid-Charts-in-Jekyll-without-Plugin/" title="Embed Mermaid Charts in Jekyll without Plugin">Embed Mermaid Charts in Jekyll without Plugin</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-11T12:44:10.000Z" title="发表于 2019-11-11 20:44:10">2019-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/markdown/">markdown</a></span></div><div class="content">转载自：http://kkpattern.github.io/2015/05/15/Embed-Chart-in-Jekyll.html Embed Mermaid Charts in Jekyll without PluginMay 15, 2015Jekyll is a blog system with which you can use markdown to write your post. It’s a great tool for programers to write blogs, especially with github. However markdown lacks of supportment for charts, which could be helpful for elaborating some concepts. Luckily there are some tools to make up this. Mermaid is a tool for users to create diagrams and flowcharts from text ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20191108/deploy/2019-11-08-linux-network-traffic/" title="Linux服务器上监控网络带宽的18个常用命令和linux带宽流量监控查看工具"><img class="post-bg" src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="Linux服务器上监控网络带宽的18个常用命令和linux带宽流量监控查看工具"></a></div><div class="recent-post-info"><a class="article-title" href="/20191108/deploy/2019-11-08-linux-network-traffic/" title="Linux服务器上监控网络带宽的18个常用命令和linux带宽流量监控查看工具">Linux服务器上监控网络带宽的18个常用命令和linux带宽流量监控查看工具</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-08T11:02:18.000Z" title="发表于 2019-11-08 19:02:18">2019-11-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content"> 这些工具使用不同的机制来制作流量报告。nload等一些工具可以读取”proc/net/dev”文件，以获得流量统计信息；而一些工具使用pcap库来捕获所有数据包，然后计算总数据量，从而估计流量负载。 下面是按功能划分的命令名称。 监控总体带宽使用――nload、bmon、slurm、bwm-ng、cbm、speedometer和netload监控总体带宽使用（批量式输出）――vnstat、ifstat、dstat和collectl每个套接字连接的带宽使用――iftop、iptraf、tcptrack、pktstat、netwatch和trafshow每个进程的带宽使用――nethogs 1. nload nload是一个命令行工具，让用户可以分开来监控入站流量和出站流量。它还可以绘制图表以显示入站流量和出站流量，视图比例可以调整。用起来很简单，不支持许多选项。 所以，如果你只需要快速查看总带宽使用情况，无需每个进程的详细情况，那么nload用起来很方便。1$ nload 安装nload：Fedora和Ubuntu在默认软件库里面就有nload。CentOS用户则需要从Epel软...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20191108/deploy/2019-11-08-markdown/" title="markdown使用说明与示例"><img class="post-bg" src="/picture/flame.gif" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="markdown使用说明与示例"></a></div><div class="recent-post-info"><a class="article-title" href="/20191108/deploy/2019-11-08-markdown/" title="markdown使用说明与示例">markdown使用说明与示例</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-08T07:44:10.000Z" title="发表于 2019-11-08 15:44:10">2019-11-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/markdown/">markdown</a></span></div><div class="content">一、标题Markdown 标题有两种格式 1、使用 = 和 - 标记一级和二级标题= 和 - 标记语法格式如下：代码：12345我展示的是一级标题=================我展示的是二级标题----------------- 效果： 我展示的是一级标题我展示的是二级标题2、在想要设置为标题的文字前面加#来表示一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。 注：标准语法一般在#后跟个空格再写文字，貌似简书不加空格也行。 示例：1234567891011# 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题##### 这是五级标题###### 这是六级标题 这是一级标题这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题二、字体代码：1234567**这是加粗的文字***这是倾斜的文字*`***这是斜体加粗的文字***~~这是加删除线的文字~~效果：  这是加粗的文字 这是倾斜的文字` 这是斜体加粗的文字 这是加删除线的文字 三、引用在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;n...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20191108/deploy/2019-11-08-markdown%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" title="Markdown语法说明"><img class="post-bg" src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="Markdown语法说明"></a></div><div class="recent-post-info"><a class="article-title" href="/20191108/deploy/2019-11-08-markdown%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" title="Markdown语法说明">Markdown语法说明</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-08T07:44:10.000Z" title="发表于 2019-11-08 15:44:10">2019-11-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/markdown/">markdown</a></span></div><div class="content">Markdown语法说明一、标题1、使用=和-标记一级和二级标题= 和 - 标记语法格式如下：代码：12345我展示的是一级标题=================我展示的是二级标题----------------- 效果： 我展示的是一级标题我展示的是二级标题2、在想要设置为标题的文字前面加#来表示一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。 注：标准语法一般在#后跟个空格再写文字，貌似简书不加空格也行。 示例：1234567891011# 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题##### 这是五级标题###### 这是六级标题 这是一级标题这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题二、字体代码：1234567**这是加粗的文字***这是倾斜的文字*`***这是斜体加粗的文字***~~这是加删除线的文字~~效果：  这是加粗的文字 这是倾斜的文字` 这是斜体加粗的文字 这是加删除线的文字 三、引用在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;n个… 貌似可以一直...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20191108/deploy/2019-11-08-csdn-markdown-help/" title="csdn Markdown使用示例"><img class="post-bg" src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="csdn Markdown使用示例"></a></div><div class="recent-post-info"><a class="article-title" href="/20191108/deploy/2019-11-08-csdn-markdown-help/" title="csdn Markdown使用示例">csdn Markdown使用示例</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-08T07:02:18.000Z" title="发表于 2019-11-08 15:02:18">2019-11-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/markdown/">markdown</a></span></div><div class="content">csdn Markdown使用示例@TOC 欢迎使用Markdown编辑器你好！ 这是你第一次使用 Markdown编辑器 所展示的欢迎页。如果你想学习如何使用Markdown编辑器, 可以仔细阅读这篇文章，了解一下Markdown的基本语法知识。 新的改变我们对Markdown编辑器进行了一些功能拓展与语法支持，除了标准的Markdown编辑器功能，我们增加了如下几点新功能，帮助你用它写博客：  全新的界面设计 ，将会带来全新的写作体验； 在创作中心设置你喜爱的代码高亮样式，Markdown 将代码片显示选择的高亮样式 进行展示； 增加了 图片拖拽 功能，你可以将本地的图片直接拖拽到编辑区域直接展示； 全新的 KaTeX数学公式 语法； 增加了支持甘特图的mermaid语法1 功能； 增加了 多屏幕编辑 Markdown文章功能； 增加了 焦点写作模式、预览模式、简洁写作模式、左右区域同步滚轮设置 等功能，功能按钮位于编辑区域与预览区域中间； 增加了 检查列表 功能。  功能快捷键撤销：Ctrl/Command + Z重做：Ctrl/Command + Y加粗：Ctrl/Com...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/26/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/#content-inner">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/#content-inner">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/#content-inner">37</a><a class="extend next" rel="next" href="/page/28/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/picture/flame.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">火苗</div><div class="author-info-description">多情自古空余恨，好梦由来最易醒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">366</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" href="http://www.xssl.online/"><i class="/assets/images/favicon.png"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/82488059" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:82488059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">每天都有一个好心情</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent"><img src="/picture/src/cover/canvas.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译libtorrent"/></a><div class="content"><a class="title" href="/20240523/2024/05/windows%E7%BC%96%E8%AF%91libtorrent/" title="windows编译libtorrent">windows编译libtorrent</a><time datetime="2024-05-23T13:44:32.000Z" title="发表于 2024-05-23 21:44:32">2024-05-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost"><img src="/picture/src/cover/language.jpeg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="windows编译boost"/></a><div class="content"><a class="title" href="/20240508/2024/05/windows%E7%BC%96%E8%AF%91boost/" title="windows编译boost">windows编译boost</a><time datetime="2024-05-08T13:44:32.000Z" title="发表于 2024-05-08 21:44:32">2024-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux"><img src="/picture/src/cover/linux.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="vscode远程调试linux"/></a><div class="content"><a class="title" href="/20231221/2023/12/vscode%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95linux/" title="vscode远程调试linux">vscode远程调试linux</a><time datetime="2023-12-21T12:05:00.000Z" title="发表于 2023-12-21 20:05:00">2023-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程"><img src="/picture/src/cover/search.png" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="linux服务检查进程"/></a><div class="content"><a class="title" href="/20231201/2023/12/linux%E6%9C%8D%E5%8A%A1%E6%A3%80%E6%9F%A5%E8%BF%9B%E7%A8%8B/" title="linux服务检查进程">linux服务检查进程</a><time datetime="2023-12-01T12:05:00.000Z" title="发表于 2023-12-01 20:05:00">2023-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务"><img src="/picture/src/cover/20220722171029.jpg" onerror="this.onerror=null;this.src='/picture/flame.jpg'" alt="ubuntu配置vnc服务"/></a><div class="content"><a class="title" href="/20231103/2023/11/linux%E9%85%8D%E7%BD%AEvnc%E6%9C%8D%E5%8A%A1/" title="ubuntu配置vnc服务">ubuntu配置vnc服务</a><time datetime="2023-11-03T12:05:00.000Z" title="发表于 2023-11-03 20:05:00">2023-11-03</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/"><span class="card-category-list-name">algorithm</span><span class="card-category-list-count">81</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/maze/"><span class="card-category-list-name">maze</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/search/"><span class="card-category-list-name">search</span><span class="card-category-list-count">34</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/algorithm/sort/"><span class="card-category-list-name">sort</span><span class="card-category-list-count">33</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/aws/"><span class="card-category-list-name">aws</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/boost/"><span class="card-category-list-name">boost</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/build/"><span class="card-category-list-name">build</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/c/"><span class="card-category-list-name">c++</span><span class="card-category-list-count">110</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/aws/" style="font-size: 1.28em; color: #99a0aa">aws</a> <a href="/tags/maze/" style="font-size: 1.39em; color: #99a5b5">maze</a> <a href="/tags/proxy/" style="font-size: 1.17em; color: #999ca0">proxy</a> <a href="/tags/shell/" style="font-size: 1.32em; color: #99a2ae">shell</a> <a href="/tags/boost/" style="font-size: 1.43em; color: #99a6b8">boost</a> <a href="/tags/video/" style="font-size: 1.1em; color: #999">video</a> <a href="/tags/pygame/" style="font-size: 1.35em; color: #99a3b1">pygame</a> <a href="/tags/lua/" style="font-size: 1.17em; color: #999ca0">lua</a> <a href="/tags/tools/" style="font-size: 1.14em; color: #999a9c">tools</a> <a href="/tags/opengl/" style="font-size: 1.17em; color: #999ca0">opengl</a> <a href="/tags/redis/" style="font-size: 1.17em; color: #999ca0">redis</a> <a href="/tags/network/" style="font-size: 1.1em; color: #999">network</a> <a href="/tags/s3-sync/" style="font-size: 1.1em; color: #999">s3 sync</a> <a href="/tags/ustar/" style="font-size: 1.1em; color: #999">ustar</a> <a href="/tags/centos/" style="font-size: 1.1em; color: #999">centos</a> <a href="/tags/git/" style="font-size: 1.17em; color: #999ca0">git</a> <a href="/tags/ffmpeg/" style="font-size: 1.21em; color: #999da3">ffmpeg</a> <a href="/tags/cp/" style="font-size: 1.1em; color: #999">cp</a> <a href="/tags/windows/" style="font-size: 1.39em; color: #99a5b5">windows</a> <a href="/tags/minizip/" style="font-size: 1.1em; color: #999">minizip</a> <a href="/tags/base64/" style="font-size: 1.1em; color: #999">base64</a> <a href="/tags/py/" style="font-size: 1.1em; color: #999">py</a> <a href="/tags/vs/" style="font-size: 1.28em; color: #99a0aa">vs</a> <a href="/tags/icon/" style="font-size: 1.1em; color: #999">icon</a> <a href="/tags/TortriseGit/" style="font-size: 1.14em; color: #999a9c">TortriseGit</a> <a href="/tags/mov/" style="font-size: 1.1em; color: #999">mov</a> <a href="/tags/unicode/" style="font-size: 1.1em; color: #999">unicode</a> <a href="/tags/cocos/" style="font-size: 1.21em; color: #999da3">cocos</a> <a href="/tags/libzip/" style="font-size: 1.1em; color: #999">libzip</a> <a href="/tags/service/" style="font-size: 1.1em; color: #999">service</a> <a href="/tags/hex/" style="font-size: 1.1em; color: #999">hex</a> <a href="/tags/samb/" style="font-size: 1.1em; color: #999">samb</a> <a href="/tags/svn/" style="font-size: 1.1em; color: #999">svn</a> <a href="/tags/transcoding/" style="font-size: 1.17em; color: #999ca0">transcoding</a> <a href="/tags/go/" style="font-size: 1.17em; color: #999ca0">go</a> <a href="/tags/sql/" style="font-size: 1.25em; color: #999fa7">sql</a> <a href="/tags/sort/" style="font-size: 1.46em; color: #99a8bc">sort</a> <a href="/tags/udp/" style="font-size: 1.17em; color: #999ca0">udp</a> <a href="/tags/python/" style="font-size: 1.5em; color: #99a9bf">python</a> <a href="/tags/database/" style="font-size: 1.1em; color: #999">database</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/05/">
+            <span class="card-archive-list-date">
+              五月 2024
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/12/">
+            <span class="card-archive-list-date">
+              十二月 2023
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/11/">
+            <span class="card-archive-list-date">
+              十一月 2023
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/09/">
+            <span class="card-archive-list-date">
+              九月 2023
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/08/">
+            <span class="card-archive-list-date">
+              八月 2023
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/07/">
+            <span class="card-archive-list-date">
+              七月 2023
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/06/">
+            <span class="card-archive-list-date">
+              六月 2023
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/05/">
+            <span class="card-archive-list-date">
+              五月 2023
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">366</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-30T03:49:19.260Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By 火苗</span></div><div class="footer_custom_text"><img src="https://haiyong.site/img/icp.png" alt="ICP" style="height:1.2em;vertical-align:middle"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:white" target="_blank">京ICP备2022021138号-2</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.4.3"></script><script src="/js/main.js?v=5.4.3"></script><div class="js-pjax"></div><script async data-pjax src="/js/site-stat.js"></script></div></body></html>
