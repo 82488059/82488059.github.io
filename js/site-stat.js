@@ -1,5 +1,12 @@
 (() => {
-  const API = '/api/stat'
+  const host = location.hostname
+  const onXssl =
+    host === 'www.xssl.online' ||
+    host === 'xssl.online' ||
+    host === 'localhost' ||
+    host === '127.0.0.1'
+  // GitHub Pages (HTTPS) must call the public HTTPS API; same-origin stays relative.
+  const API = onXssl ? '/api/stat' : 'https://www.xssl.online/api/stat'
 
   const normalizePath = (path) => {
     let p = path || '/'
@@ -32,7 +39,7 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ path }),
-      credentials: 'same-origin',
+      credentials: 'omit',
       keepalive: true
     })
       .then((r) => (r.ok ? r.json() : null))
